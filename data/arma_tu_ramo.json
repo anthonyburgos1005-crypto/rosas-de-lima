@@ -1,0 +1,57 @@
+{
+  "_nota": "EJEMPLO: opciones referenciales. Confirmar con el dueño qué flores, envolturas y extras ofrece. tipo 'una' = el cliente elige una sola opción; 'varias' = puede marcar varias. 'precio_extra' solo se usa si mostrarPrecios es true en config.js.",
+  "grupos": [
+    {
+      "grupo": "Flor", "pregunta": "¿Qué flor prefiere?", "tipo": "una",
+      "opciones": [
+        { "opcion": "Rosas", "precio_extra": "" },
+        { "opcion": "Girasoles", "precio_extra": "" },
+        { "opcion": "Tulipanes", "precio_extra": "" },
+        { "opcion": "Lirios", "precio_extra": "" },
+        { "opcion": "Gerberas", "precio_extra": "" },
+        { "opcion": "Flores variadas", "precio_extra": "" }
+      ]
+    },
+    {
+      "grupo": "Cantidad", "pregunta": "¿Cuántas flores?", "tipo": "una",
+      "opciones": [
+        { "opcion": "6 flores", "precio_extra": "" },
+        { "opcion": "12 flores", "precio_extra": "" },
+        { "opcion": "24 flores", "precio_extra": "" },
+        { "opcion": "50 flores", "precio_extra": "" },
+        { "opcion": "100 flores", "precio_extra": "" }
+      ]
+    },
+    {
+      "grupo": "Colores", "pregunta": "¿En qué colores? Puede elegir varios", "tipo": "varias",
+      "opciones": [
+        { "opcion": "Rojo", "precio_extra": "" },
+        { "opcion": "Rosado", "precio_extra": "" },
+        { "opcion": "Blanco", "precio_extra": "" },
+        { "opcion": "Amarillo", "precio_extra": "" },
+        { "opcion": "Lila", "precio_extra": "" },
+        { "opcion": "Naranja", "precio_extra": "" },
+        { "opcion": "Variado", "precio_extra": "" }
+      ]
+    },
+    {
+      "grupo": "Envoltura", "pregunta": "¿Cómo lo presentamos?", "tipo": "una",
+      "opciones": [
+        { "opcion": "Papel coreano", "precio_extra": "" },
+        { "opcion": "Papel kraft", "precio_extra": "" },
+        { "opcion": "Box o caja", "precio_extra": "" },
+        { "opcion": "Florero de vidrio", "precio_extra": "" },
+        { "opcion": "Canasta", "precio_extra": "" }
+      ]
+    },
+    {
+      "grupo": "Extras", "pregunta": "¿Desea agregar algo más?", "tipo": "varias",
+      "opciones": [
+        { "opcion": "Chocolates", "precio_extra": "" },
+        { "opcion": "Peluche", "precio_extra": "" },
+        { "opcion": "Globo", "precio_extra": "" },
+        { "opcion": "Tarjeta con dedicatoria", "precio_extra": "" }
+      ]
+    }
+  ]
+}

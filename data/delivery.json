@@ -1,0 +1,28 @@
+{
+  "_nota": "EJEMPLO: lista de distritos y tiempos referenciales. Confirmar con el dueño a qué distritos reparte y en cuánto tiempo. 'costo' vacío = 'Se confirma por WhatsApp'.",
+  "distritos": [
+    { "distrito": "Comas", "zona": "Lima Norte", "costo": "", "tiempo_estimado": "El mismo día" },
+    { "distrito": "Carabayllo", "zona": "Lima Norte", "costo": "", "tiempo_estimado": "El mismo día" },
+    { "distrito": "Independencia", "zona": "Lima Norte", "costo": "", "tiempo_estimado": "El mismo día" },
+    { "distrito": "Los Olivos", "zona": "Lima Norte", "costo": "", "tiempo_estimado": "El mismo día" },
+    { "distrito": "San Martín de Porres", "zona": "Lima Norte", "costo": "", "tiempo_estimado": "El mismo día" },
+    { "distrito": "Puente Piedra", "zona": "Lima Norte", "costo": "", "tiempo_estimado": "El mismo día" },
+    { "distrito": "Ancón", "zona": "Lima Norte", "costo": "", "tiempo_estimado": "Previa coordinación" },
+    { "distrito": "Santa Rosa", "zona": "Lima Norte", "costo": "", "tiempo_estimado": "Previa coordinación" },
+    { "distrito": "Rímac", "zona": "Lima Centro", "costo": "", "tiempo_estimado": "Previa coordinación" },
+    { "distrito": "Cercado de Lima", "zona": "Lima Centro", "costo": "", "tiempo_estimado": "Previa coordinación" },
+    { "distrito": "Breña", "zona": "Lima Centro", "costo": "", "tiempo_estimado": "Previa coordinación" },
+    { "distrito": "Jesús María", "zona": "Lima Centro", "costo": "", "tiempo_estimado": "Previa coordinación" },
+    { "distrito": "Lince", "zona": "Lima Centro", "costo": "", "tiempo_estimado": "Previa coordinación" },
+    { "distrito": "Pueblo Libre", "zona": "Lima Centro", "costo": "", "tiempo_estimado": "Previa coordinación" },
+    { "distrito": "San Miguel", "zona": "Lima Centro", "costo": "", "tiempo_estimado": "Previa coordinación" },
+    { "distrito": "Magdalena del Mar", "zona": "Lima Centro", "costo": "", "tiempo_estimado": "Previa coordinación" },
+    { "distrito": "La Victoria", "zona": "Lima Centro", "costo": "", "tiempo_estimado": "Previa coordinación" },
+    { "distrito": "San Isidro", "zona": "Lima Centro", "costo": "", "tiempo_estimado": "Previa coordinación" },
+    { "distrito": "Miraflores", "zona": "Lima Centro", "costo": "", "tiempo_estimado": "Previa coordinación" },
+    { "distrito": "San Borja", "zona": "Lima Centro", "costo": "", "tiempo_estimado": "Previa coordinación" },
+    { "distrito": "Santiago de Surco", "zona": "Lima Centro", "costo": "", "tiempo_estimado": "Previa coordinación" },
+    { "distrito": "San Juan de Lurigancho", "zona": "Lima Este", "costo": "", "tiempo_estimado": "Previa coordinación" },
+    { "distrito": "Callao", "zona": "Callao", "costo": "", "tiempo_estimado": "Previa coordinación" }
+  ]
+}

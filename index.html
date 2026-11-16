@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="css/styles.css">
 
   <!-- Datos para Google (SEO local). Si cambia teléfono o dirección, cámbielos también aquí.
-       PENDIENTE: agregar "openingHours" y "geo" (latitud/longitud) cuando el dueño los confirme. -->
+       PENDIENTE: agregar "geo" (latitud/longitud) cuando el dueño la confirme. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -48,6 +48,7 @@
       "postalCode": "15314",
       "addressCountry": "PE"
     },
+    "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "00:00", "closes": "23:59" },
     "areaServed": ["Comas", "Lima Norte", "Lima"]
   }
   </script>
@@ -679,46 +680,6 @@
   <svg aria-hidden="true"><use href="#i-wa"/></svg>
 </a>
 
-<!-- ============ FORMULARIO DE PEDIDO (se abre al tocar "Pedir") ============ -->
-<dialog class="dialogo" id="dialogoPedido" aria-labelledby="pedidoNombre">
-  <form class="formulario" id="formPedido" method="dialog">
-    <button class="dialogo-cerrar" type="button" id="pedidoCerrar" aria-label="Cerrar">
-      <svg aria-hidden="true"><use href="#i-cerrar"/></svg>
-    </button>
-
-    <div class="pedido-producto">
-      <img id="pedidoFoto" alt="" width="96" height="120">
-      <div>
-        <p class="sobretitulo" id="pedidoEvento"></p>
-        <h2 id="pedidoNombre"></h2>
-        <p class="codigo" id="pedidoCodigo"></p>
-      </div>
-    </div>
-
-    <label class="campo"><span>Su nombre</span><input type="text" name="nombre" autocomplete="name" required></label>
-    <div class="campos-2">
-      <label class="campo"><span>Fecha de entrega</span><input type="date" name="fecha" required></label>
-      <label class="campo"><span>Hora aproximada</span><input type="time" name="hora" required></label>
-    </div>
-
-    <!-- Solo para Velorios -->
-    <div id="camposVelorio" hidden>
-      <label class="campo"><span>Nombre de la persona fallecida</span><input type="text" name="difunto"></label>
-      <label class="campo"><span>Funeraria o lugar del velorio</span><input type="text" name="velatorio"></label>
-    </div>
-
-    <label class="campo"><span>Distrito de entrega</span><select name="distrito" id="pedidoDistrito" required></select></label>
-    <p class="campo-ayuda" id="pedidoDelivery" aria-live="polite"></p>
-    <label class="campo"><span>Dirección de entrega</span><input type="text" name="direccion" autocomplete="street-address" placeholder="Calle, número y referencia" required></label>
-    <label class="campo"><span>Dedicatoria para la tarjeta <small>(opcional)</small></span><textarea name="dedicatoria" rows="2"></textarea></label>
-    <label class="campo" id="campoPago" hidden><span>Método de pago</span><select name="pago" id="pedidoPago"></select></label>
-
-    <button class="boton boton-wa boton-ancho" type="submit">
-      <svg class="icono" aria-hidden="true"><use href="#i-wa"/></svg>Enviar pedido por WhatsApp
-    </button>
-    <p class="campo-ayuda centro">Le confirmamos el precio y el envío por WhatsApp antes de preparar su pedido.</p>
-  </form>
-</dialog>
 
 <script src="js/config.js"></script>
 <script src="js/app.js" defer></script>

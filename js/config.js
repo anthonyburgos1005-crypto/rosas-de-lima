@@ -24,7 +24,7 @@ window.CONFIG = {
 
   // Frase de atención (viene del volante del dueño) y horario de la tienda.
   atencion: 'Atención inmediata las 24 horas por WhatsApp.',
-  horario: '[PENDIENTE]',            // ej. 'Tienda: lunes a domingo de 8:00 a. m. a 10:00 p. m.'
+  horario: 'Todos los días, a cualquier hora.',
   metodosPago: [],                   // ej. ['Yape', 'Plin', 'Transferencia', 'Efectivo']
 
   // Redes: deje '' si no tiene. Solo se muestran las que tengan link.

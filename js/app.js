@@ -501,87 +501,25 @@
     });
   };
 
-  /* ---------- Formulario de pedido ---------- */
-  const textoDelivery = (d) => {
-    if (!d) return 'Le confirmamos por WhatsApp si llegamos a su zona y el costo del envío.';
-    const costo = tienePrecio(d.costo) ? `Costo de envío: ${soles(d.costo)}.` : 'El costo del envío se confirma por WhatsApp.';
-    return `${d.tiempo_estimado ? 'Entrega: ' + d.tiempo_estimado.toLowerCase() + '. ' : ''}${costo}`;
-  };
-
+  /* ---------- Pedido directo por WhatsApp ---------- */
+  // Al tocar "Pedir" se abre WhatsApp con el pedido ya escrito (arreglo, código, evento y foto).
+  // No se hacen preguntas: la fecha, la dirección y la dedicatoria se coordinan en el chat.
   const abrirPedido = (codigo, esOferta = false) => {
     const p = estado.productos.find((x) => x.codigo === codigo);
     if (!p) return;
-    estado.productoActual = p;
-    estado.esOferta = esOferta;
-    const esVelorio = p.evento === 'Velorios';
-    $('#pedidoFoto').src = p.foto;
-    $('#pedidoEvento').textContent = esOferta ? `Oferta del día · ${p.evento}` : p.evento;
-    $('#pedidoNombre').textContent = p.nombre;
-    $('#pedidoCodigo').textContent = `Código ${p.codigo}${tienePrecio(p.precio) ? ' · ' + soles(p.precio) : ''}`;
-    $('#camposVelorio').hidden = !esVelorio;
-    // En velorios, la "dedicatoria" es el texto de la cinta o tarjeta.
-    $('#formPedido [name="dedicatoria"]').closest('.campo').firstElementChild.innerHTML =
-      esVelorio ? 'Texto para la cinta o tarjeta <small>(opcional)</small>' : 'Dedicatoria para la tarjeta <small>(opcional)</small>';
-    $('#formPedido [name="fecha"]').min = hoyISO();
-    $('#dialogoPedido').showModal();
-    document.documentElement.classList.add('sin-scroll');
-  };
-
-  const iniciarPedido = () => {
-    const dialogo = $('#dialogoPedido');
-    const form = $('#formPedido');
-
-    // Lista de distritos
-    const sel = $('#pedidoDistrito');
-    sel.innerHTML = '<option value="">Seleccione su distrito</option>' +
-      estado.distritos.map((d) => `<option>${escapar(d.distrito)}</option>`).join('') +
-      '<option value="Otro distrito">Otro distrito (consultar)</option>';
-    sel.addEventListener('change', () => {
-      $('#pedidoDelivery').textContent = sel.value ? textoDelivery(estado.distritos.find((d) => d.distrito === sel.value)) : '';
-    });
-
-    // Métodos de pago: solo aparece el campo si están definidos en config.js
-    if (C.metodosPago && C.metodosPago.length) {
-      $('#campoPago').hidden = false;
-      $('#pedidoPago').innerHTML = '<option value="">Seleccione</option>' + C.metodosPago.map((m) => `<option>${escapar(m)}</option>`).join('');
-    }
-
-    $('#pedidoCerrar').addEventListener('click', () => dialogo.close());
-    dialogo.addEventListener('click', (e) => { if (e.target === dialogo) dialogo.close(); }); // toque fuera de la ventana
-    dialogo.addEventListener('close', () => document.documentElement.classList.remove('sin-scroll'));
-
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const p = estado.productoActual;
-      if (!p) return;
-      const f = Object.fromEntries(new FormData(form).entries());
-      const d = estado.distritos.find((x) => x.distrito === f.distrito);
-
-      const lineas = [
-        `${SALUDO} Quisiera hacer este pedido:`,
-        '',
-        `*Arreglo:* ${p.nombre}`,
-        `*Código:* ${p.codigo}`,
-        `*Evento:* ${p.evento}`
-      ];
-      if (estado.esOferta) lineas.push('*Oferta del día:* sí, la vi en la página');
-      if (tienePrecio(p.precio)) {
-        lineas.push(`*Precio:* ${soles(p.precio)}`);
-        if (d && tienePrecio(d.costo)) lineas.push(`*Delivery:* ${soles(d.costo)}`, `*Total:* ${soles(Number(p.precio) + Number(d.costo))}`);
-      }
-      lineas.push('', `*Nombre:* ${f.nombre}`, `*Fecha de entrega:* ${fechaLarga(f.fecha)}`, `*Hora aproximada:* ${horaCorta(f.hora)}`);
-      if (p.evento === 'Velorios') {
-        if (f.difunto) lineas.push(`*Persona fallecida:* ${f.difunto}`);
-        if (f.velatorio) lineas.push(`*Funeraria o lugar del velorio:* ${f.velatorio}`);
-      }
-      lineas.push(`*Distrito:* ${f.distrito}`, `*Dirección:* ${f.direccion}`);
-      if (f.dedicatoria) lineas.push(`*${p.evento === 'Velorios' ? 'Texto para la cinta o tarjeta' : 'Dedicatoria'}:* ${f.dedicatoria}`);
-      if (f.pago) lineas.push(`*Método de pago:* ${f.pago}`);
-      lineas.push('', 'Quedo a la espera de la confirmación del precio y del envío. Gracias.');
-
-      abrirWhatsApp(lineas.join('\n'));
-      dialogo.close();
-    });
+    const lineas = [
+      `${SALUDO} Quisiera pedir este arreglo:`,
+      '',
+      `*Arreglo:* ${p.nombre}`,
+      `*Código:* ${p.codigo}`,
+      `*Evento:* ${p.evento}`
+    ];
+    if (p.tipo) lineas.push(`*Categoría:* ${p.tipo}`);
+    if (esOferta) lineas.push('*Oferta del día:* sí, la vi en la página');
+    if (tienePrecio(p.precio)) lineas.push(`*Precio:* ${soles(p.precio)}`);
+    try { lineas.push(`*Foto:* ${new URL(p.foto, window.location.href).href}`); } catch (e) { /* sin foto en el mensaje */ }
+    lineas.push('', 'Por favor, indíqueme el precio y la disponibilidad. Luego le paso la fecha, la dirección de entrega y la dedicatoria. Gracias.');
+    abrirWhatsApp(lineas.join('\n'));
   };
 
   /* ---------- Arme su ramo ---------- */
@@ -784,7 +722,6 @@
     pintarCategorias();
     iniciarCarrusel();
     iniciarOferta();
-    iniciarPedido();
     iniciarRamo();
     iniciarDelivery();
   };

@@ -143,6 +143,11 @@
     { "codigo": "CUM-42", "evento": "Cumpleaños", "tipo": "Boxes y arreglos especiales", "nombre": "Arreglo de gerberas rosadas con lirio", "descripcion": "", "precio": "", "foto": "img/fotos/cum-42.jpg", "disponible": "SI", "destacado": "NO", "orden": 117 },
     { "codigo": "CUM-43", "evento": "Cumpleaños", "tipo": "Arreglos con tulipanes", "nombre": "Bowl de tulipanes amarillos y naranjas", "descripcion": "", "precio": "", "foto": "img/fotos/cum-43.jpg", "disponible": "SI", "destacado": "NO", "orden": 118 },
     { "codigo": "CUM-44", "evento": "Cumpleaños", "tipo": "Arreglos con tulipanes", "nombre": "Florero de tulipanes multicolor con osito", "descripcion": "", "precio": "", "foto": "img/fotos/cum-44.jpg", "disponible": "SI", "destacado": "NO", "orden": 119 },
-    { "codigo": "CUM-45", "evento": "Cumpleaños", "tipo": "Boxes y arreglos especiales", "nombre": "Canasta con tulipanes, osito y chocolates", "descripcion": "", "precio": "", "foto": "img/fotos/cum-45.jpg", "disponible": "SI", "destacado": "NO", "orden": 120 }
+    { "codigo": "CUM-45", "evento": "Cumpleaños", "tipo": "Boxes y arreglos especiales", "nombre": "Canasta con tulipanes, osito y chocolates", "descripcion": "", "precio": "", "foto": "img/fotos/cum-45.jpg", "disponible": "SI", "destacado": "NO", "orden": 120 },
+    { "codigo": "VEL-75", "evento": "Velorios", "tipo": "Cruces de pompones", "nombre": "Cruz de pompones amarillos con base de flores", "descripcion": "", "precio": "", "foto": "img/fotos/vel-75.jpg", "disponible": "SI", "destacado": "NO", "orden": 121 },
+    { "codigo": "VEL-76", "evento": "Velorios", "tipo": "Cruces de pompones", "nombre": "Cruz de hojas con rosas rojas", "descripcion": "", "precio": "", "foto": "img/fotos/vel-76.jpg", "disponible": "SI", "destacado": "NO", "orden": 122 },
+    { "codigo": "VEL-77", "evento": "Velorios", "tipo": "Cruces de pompones", "nombre": "Cruz de pompones blancos con rosas y lirio", "descripcion": "", "precio": "", "foto": "img/fotos/vel-77.jpg", "disponible": "SI", "destacado": "NO", "orden": 123 },
+    { "codigo": "VEL-78", "evento": "Velorios", "tipo": "Cruces de pompones", "nombre": "Cruz de hojas con rosas rojas y pompones", "descripcion": "", "precio": "", "foto": "img/fotos/vel-78.jpg", "disponible": "SI", "destacado": "NO", "orden": 124 },
+    { "codigo": "VEL-79", "evento": "Velorios", "tipo": "Cruces de pompones", "nombre": "Cruz de pompones blancos con rosas amarillas", "descripcion": "", "precio": "", "foto": "img/fotos/vel-79.jpg", "disponible": "SI", "destacado": "NO", "orden": 125 }
   ]
 }

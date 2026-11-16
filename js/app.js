@@ -254,26 +254,32 @@
     montarCarrusel(caja, puntos, antes, despues, 4500);
   };
 
-  /* ---------- Categorías: un círculo por cada tipo de arreglo ---------- */
+  /* ---------- Categorías: una tarjeta por evento, con sus apartados adentro ---------- */
   const pintarCategorias = () => {
-    const grupos = [];
-    estado.catalogos.forEach((cat) => {
+    const info = C.categorias || {};
+    const tarjetas = estado.catalogos.map((cat) => {
       const prods = disponibles().filter((p) => p.evento === cat.evento).sort(porOrden);
-      if (!prods.length) return;
-      const tipos = [...new Set(prods.map((p) => p.tipo).filter(Boolean))];
-      if (tipos.length < 2) { grupos.push({ evento: cat.evento, tipo: 'Todos', nombre: cat.evento, detalle: '', foto: prods[0].foto, n: prods.length }); return; }
-      tipos.forEach((t) => {
-        const deEsteTipo = prods.filter((p) => p.tipo === t);
-        grupos.push({ evento: cat.evento, tipo: t, nombre: t, detalle: cat.evento, foto: deEsteTipo[0].foto, n: deEsteTipo.length });
-      });
-    });
-    if (!grupos.length) { $('#categorias').hidden = true; return; }
+      if (!prods.length) return null;
+      const tipos = [...new Set(prods.map((p) => p.tipo).filter(Boolean))].map((t) => ({ t, n: prods.filter((p) => p.tipo === t).length }));
+      const i = info[cat.evento] || {};
+      return { evento: cat.evento, foto: i.foto || prods[0].foto, texto: i.texto || '', n: prods.length, tipos, oscura: cat.evento === 'Velorios' };
+    }).filter(Boolean);
+    if (!tarjetas.length) { $('#categorias').hidden = true; return; }
 
-    $('#categoriasLista').innerHTML = grupos.map((g) => `
-      <button class="categoria" type="button" data-cat-evento="${escapar(g.evento)}" data-cat-tipo="${escapar(g.tipo)}">
-        <span class="categoria-foto${g.evento === 'Velorios' ? ' oscura' : ''}"><img src="${escapar(g.foto)}" alt="" loading="lazy" width="200" height="250"></span>
-        <span class="categoria-nombre">${escapar(g.nombre)}<small>${escapar(g.detalle ? g.detalle + ' · ' : '')}${g.n}</small></span>
-      </button>`).join('');
+    $('#categoriasLista').innerHTML = tarjetas.map((g) => `
+      <article class="cat-grande${g.oscura ? ' oscuro' : ''}">
+        <button class="cat-grande-foto" type="button" data-cat-evento="${escapar(g.evento)}" data-cat-tipo="Todos" aria-label="Ver todo en ${escapar(g.evento)}">
+          <img src="${escapar(g.foto)}" alt="" loading="lazy" width="400" height="500">
+        </button>
+        <div class="cat-grande-cuerpo">
+          <h3>${escapar(g.evento)}</h3>
+          ${g.texto ? `<p class="cat-grande-texto">${escapar(g.texto)}</p>` : ''}
+          <div class="cat-pastillas" role="group" aria-label="Apartados de ${escapar(g.evento)}">
+            ${g.tipos.map((t) => `<button class="cat-pastilla" type="button" data-cat-evento="${escapar(g.evento)}" data-cat-tipo="${escapar(t.t)}">${escapar(t.t)} <small>${t.n}</small></button>`).join('')}
+          </div>
+          <button class="enlace cat-todo" type="button" data-cat-evento="${escapar(g.evento)}" data-cat-tipo="Todos">Ver los ${g.n} arreglos <svg class="icono" aria-hidden="true"><use href="#i-flecha"/></svg></button>
+        </div>
+      </article>`).join('');
 
     $('#categoriasLista').addEventListener('click', (e) => {
       const b = e.target.closest('[data-cat-evento]');

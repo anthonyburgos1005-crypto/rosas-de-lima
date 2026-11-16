@@ -50,6 +50,14 @@ window.CONFIG = {
   // están escritos en index.html, dentro de <section class="heroes">: cada <article class="hero">
   // es un banner con su frase, sus fotos y sus botones. Cambian solos cada 7 segundos.
 
+  // Tarjetas de "Elija su categoría": foto y frase de cada una (el nombre es el del evento).
+  categorias: {
+    'Cumpleaños': { foto: 'img/fotos/cum-01.jpg', texto: 'Ramos en papel coreano, tulipanes, girasoles, boxes y regalos de graduación.' },
+    'Velorios': { foto: 'img/fotos/vel-20.jpg', texto: 'Corazones, lágrimas, trípodes, coronas picarón, cruces y mantos. Atención 24 horas.' },
+    'Aniversarios': { foto: 'img/fotos/ani-01.jpg', texto: 'Ramos de rosas rojas y arreglos empresariales.' },
+    'Matrimonios': { foto: 'img/fotos/mat-01.jpg', texto: 'Bouquets de novia, caminos y centros de mesa, decoración del auto y arcos.' }
+  },
+
   // Carrusel "Los más buscados": códigos de los 6 arreglos, en el orden en que salen.
   // Los eligió el desarrollador (3 de cumpleaños y 3 de velorios): que el dueño confirme cuáles son.
   masBuscados: ['CUM-01', 'VEL-01', 'ANI-01', 'MAT-01', 'GRA-02', 'VEL-26'],

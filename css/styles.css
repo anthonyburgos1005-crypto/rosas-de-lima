@@ -582,3 +582,9 @@ main.modo-resultados > :not(#resultados) { display: none; }
   .hero.activa .p2 { animation-duration: 12s; } .hero.activa .p3 { animation-duration: 10s; animation-delay: -4s; } .hero.activa .p4 { animation-duration: 13s; animation-delay: -2s; } .hero.activa .p5 { animation-duration: 11s; animation-delay: -6s; } .hero.activa .p6 { animation-duration: 8s; animation-delay: -3s; }
   .hero.activa .hero-mini { animation: mecer 7s 1s ease-in-out infinite alternate; }
 }
+
+/* ---------- 27. Frase elegante sobre cada foto de la portada ---------- */
+.hero-arco { position: relative; }
+.hero-lema { position: absolute; top: 12%; left: 50%; transform: translateX(-50%); width: max-content; max-width: 74%; padding: .4rem 1rem; border-radius: 999px; text-align: center; color: #fff; font-family: var(--f-titulo); font-style: italic; font-weight: 500; font-size: 1.15rem; line-height: 1.15; text-wrap: balance; background: rgba(28, 33, 30, .52); -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, .35); }
+@media (min-width: 900px) { .hero-lema { font-size: 1.5rem; padding: .6rem 1.5rem; } }
+@media (max-width: 639px) { .hero-oscuro .hero-lista { display: none; } }

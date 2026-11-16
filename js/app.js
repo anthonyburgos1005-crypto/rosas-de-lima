@@ -260,7 +260,10 @@
     const tarjetas = estado.catalogos.map((cat) => {
       const prods = disponibles().filter((p) => p.evento === cat.evento).sort(porOrden);
       if (!prods.length) return null;
-      const tipos = [...new Set(prods.map((p) => p.tipo).filter(Boolean))].map((t) => ({ t, n: prods.filter((p) => p.tipo === t).length }));
+      const tipos = [...new Set(prods.map((p) => p.tipo).filter(Boolean))].map((t) => {
+        const de = prods.filter((p) => p.tipo === t);
+        return { t, n: de.length, foto: de[0].foto };
+      });
       const i = info[cat.evento] || {};
       return { evento: cat.evento, foto: i.foto || prods[0].foto, texto: i.texto || '', n: prods.length, tipos, oscura: cat.evento === 'Velorios' };
     }).filter(Boolean);
@@ -268,16 +271,24 @@
 
     $('#categoriasLista').innerHTML = tarjetas.map((g) => `
       <article class="cat-grande${g.oscura ? ' oscuro' : ''}">
-        <button class="cat-grande-foto" type="button" data-cat-evento="${escapar(g.evento)}" data-cat-tipo="Todos" aria-label="Ver todo en ${escapar(g.evento)}">
-          <img src="${escapar(g.foto)}" alt="" loading="lazy" width="400" height="500">
-        </button>
-        <div class="cat-grande-cuerpo">
-          <h3>${escapar(g.evento)}</h3>
-          ${g.texto ? `<p class="cat-grande-texto">${escapar(g.texto)}</p>` : ''}
-          <div class="cat-pastillas" role="group" aria-label="Apartados de ${escapar(g.evento)}">
-            ${g.tipos.map((t) => `<button class="cat-pastilla" type="button" data-cat-evento="${escapar(g.evento)}" data-cat-tipo="${escapar(t.t)}">${escapar(t.t)} <small>${t.n}</small></button>`).join('')}
+        <div class="cat-cab">
+          <button class="cat-grande-foto" type="button" data-cat-evento="${escapar(g.evento)}" data-cat-tipo="Todos" aria-label="Ver todo en ${escapar(g.evento)}">
+            <img src="${escapar(g.foto)}" alt="" loading="lazy" width="400" height="500">
+          </button>
+          <div class="cat-cab-texto">
+            <p class="sobretitulo">${g.n} arreglos</p>
+            <h3>${escapar(g.evento)}</h3>
+            ${g.texto ? `<p class="cat-grande-texto">${escapar(g.texto)}</p>` : ''}
+            <button class="enlace cat-todo" type="button" data-cat-evento="${escapar(g.evento)}" data-cat-tipo="Todos">Ver todos <svg class="icono" aria-hidden="true"><use href="#i-flecha"/></svg></button>
           </div>
-          <button class="enlace cat-todo" type="button" data-cat-evento="${escapar(g.evento)}" data-cat-tipo="Todos">Ver los ${g.n} arreglos <svg class="icono" aria-hidden="true"><use href="#i-flecha"/></svg></button>
+        </div>
+        <div class="cat-tiles" role="group" aria-label="Apartados de ${escapar(g.evento)}">
+          ${g.tipos.map((t) => `
+            <button class="cat-tile" type="button" data-cat-evento="${escapar(g.evento)}" data-cat-tipo="${escapar(t.t)}">
+              <img src="${escapar(t.foto)}" alt="" loading="lazy" width="300" height="375">
+              <span class="cat-tile-n">${t.n}</span>
+              <span class="cat-tile-nombre">${escapar(t.t)}</span>
+            </button>`).join('')}
         </div>
       </article>`).join('');
 

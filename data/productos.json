@@ -166,6 +166,7 @@
     { "codigo": "ANI-14", "evento": "Aniversarios", "tipo": "Arreglos empresariales", "nombre": "Trípode de lirios blancos con hortensias verdes", "descripcion": "", "precio": "", "foto": "img/fotos/ani-14.jpg", "disponible": "SI", "destacado": "NO", "orden": 140 },
     { "codigo": "ANI-16", "evento": "Aniversarios", "tipo": "Arreglos empresariales", "nombre": "Arreglo de girasoles, rosas amarillas y lirios", "descripcion": "", "precio": "", "foto": "img/fotos/ani-16.jpg", "disponible": "SI", "destacado": "NO", "orden": 141 },
     { "codigo": "ANI-17", "evento": "Aniversarios", "tipo": "Arreglos empresariales", "nombre": "Par de arreglos de lirios con hortensias azules", "descripcion": "", "precio": "", "foto": "img/fotos/ani-17.jpg", "disponible": "SI", "destacado": "NO", "orden": 142 },
-    { "codigo": "ANI-18", "evento": "Aniversarios", "tipo": "Arreglos empresariales", "nombre": "Corona redonda de aniversario con banda", "descripcion": "", "precio": "", "foto": "img/fotos/ani-18.jpg", "disponible": "SI", "destacado": "NO", "orden": 143 }
+    { "codigo": "ANI-18", "evento": "Aniversarios", "tipo": "Arreglos empresariales", "nombre": "Corona redonda de aniversario con banda", "descripcion": "", "precio": "", "foto": "img/fotos/ani-18.jpg", "disponible": "SI", "destacado": "NO", "orden": 143 },
+    { "codigo": "VEL-90", "evento": "Velorios", "tipo": "Mantos para cajón y parante", "nombre": "Manto blanco para el cajón con rosas y hortensias", "descripcion": "", "precio": "", "foto": "img/fotos/vel-90.jpg", "disponible": "SI", "destacado": "NO", "orden": 144 }
   ]
 }

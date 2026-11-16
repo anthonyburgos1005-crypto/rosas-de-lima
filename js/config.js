@@ -53,7 +53,7 @@ window.CONFIG = {
   // Tarjetas de "Elija su categoría": foto y frase de cada una (el nombre es el del evento).
   categorias: {
     'Cumpleaños': { foto: 'img/fotos/cum-01.jpg', texto: 'Ramos en papel coreano, tulipanes, girasoles, boxes y regalos de graduación.' },
-    'Velorios': { foto: 'img/fotos/vel-20.jpg', texto: 'Corazones, lágrimas, trípodes, coronas picarón, cruces y mantos. Atención 24 horas.' },
+    'Velorios': { foto: 'img/fotos/vel-20.jpg', texto: 'Corazones, lágrimas, trípodes, coronas picarón, cruces, mantos y arreglos personalizados. Atención 24 horas.' },
     'Aniversarios': { foto: 'img/fotos/ani-01.jpg', texto: 'Ramos de rosas rojas y arreglos empresariales.' },
     'Matrimonios': { foto: 'img/fotos/mat-01.jpg', texto: 'Bouquets de novia, caminos y centros de mesa, decoración del auto y arcos.' }
   },

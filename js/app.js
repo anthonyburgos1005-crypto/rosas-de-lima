@@ -424,8 +424,11 @@
     cajaTipos.hidden = tipos.length < 2;
     if (tipos.length >= 2) {
       cajaTipos.innerHTML = ['Todos', ...tipos].map((t) => {
-        const n = t === 'Todos' ? todos.length : todos.filter((p) => p.tipo === t).length;
-        return `<button class="tipo" type="button" data-tipo="${escapar(t)}" aria-pressed="${t === cat.tipo}">${escapar(t)} <small>${n}</small></button>`;
+        const deTipo = t === 'Todos' ? todos : todos.filter((p) => p.tipo === t);
+        const foto = t === 'Todos'
+          ? '<svg aria-hidden="true"><use href="#i-flor"/></svg>'
+          : `<img src="${escapar(deTipo[0].foto)}" alt="" loading="lazy" width="120" height="150">`;
+        return `<button class="tipo" type="button" data-tipo="${escapar(t)}" aria-pressed="${t === cat.tipo}"><span class="tipo-foto">${foto}</span><span class="tipo-nombre">${escapar(t)}</span><small>${deTipo.length}</small></button>`;
       }).join('');
     }
 

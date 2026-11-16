@@ -103,7 +103,7 @@ window.CONFIG = {
     {
       tema: 'rosa', etiqueta: 'Graduación', titulo: 'Felicite con un detalle único',
       texto: 'Ramos y boxes con osito graduado, globos y chocolates.',
-      boton: 'Ver graduación', enlace: '#graduacion', foto: 'img/fotos/gra-02.jpg'
+      boton: 'Ver graduación', enlace: '#cumpleanos', foto: 'img/fotos/gra-02.jpg'
     },
     {
       tema: 'oscuro', etiqueta: 'Pedido urgente', titulo: '¿Lo necesita hoy?',

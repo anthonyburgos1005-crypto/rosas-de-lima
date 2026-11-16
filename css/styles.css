@@ -261,9 +261,9 @@ button, input, select, textarea { font: inherit; color: inherit; }
 }
 
 /* ---------- 11. Catálogo ---------- */
-.tipos { display: flex; gap: .5rem; overflow-x: auto; padding: 0 1.25rem .4rem; margin: 0 -1.25rem 1.6rem; scrollbar-width: none; }
+.tipos { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem; padding: 0; margin: 0 0 1.6rem; }
 .tipos::-webkit-scrollbar { display: none; }
-.tipo { flex: none; min-height: 44px; padding: .4rem 1.1rem; border-radius: 999px; border: 1px solid var(--c-linea); background: transparent; color: var(--c-texto); font-size: .92rem; cursor: pointer; white-space: nowrap; transition: background-color .2s ease, color .2s ease, border-color .2s ease; }
+.tipo { flex: none; min-height: 44px; padding: .4rem 1rem; border-radius: 999px; border: 1px solid var(--c-linea); background: transparent; color: var(--c-texto); font-size: .92rem; cursor: pointer; white-space: nowrap; transition: background-color .2s ease, color .2s ease, border-color .2s ease; }
 .tipo:hover { border-color: var(--c-titulo); }
 .tipo[aria-pressed="true"] { background: var(--c-titulo); border-color: var(--c-titulo); color: var(--c-fondo); }
 .tipo small { opacity: .7; font-size: .85em; margin-left: .2rem; }

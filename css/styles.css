@@ -558,3 +558,27 @@ main.modo-resultados > :not(#resultados) { display: none; }
   .js .hero:not(.activa) .hero-arte { opacity: 0; transform: translateX(26px); }
   .hero.activa .hero-circulo { animation: mecer 6s ease-in-out infinite alternate; }
 }
+
+/* ---------- 26. Portada más florería: ramas, pétalos y tres fotos ---------- */
+.hero-deco { position: absolute; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
+.hero-rama { position: absolute; color: var(--h-borde); opacity: .75; }
+.hero-rama.r1 { width: 7rem; right: -1rem; top: 38%; transform: rotate(14deg); }
+.hero-rama.r2 { width: 8.5rem; left: -2rem; bottom: -1rem; transform: rotate(-24deg); }
+.petalo { position: absolute; width: 14px; height: 20px; border-radius: 80% 0 80% 0; background: var(--h-acento); opacity: .4; }
+.hero-deco .p1 { left: 6%; top: 12%; } .hero-deco .p2 { left: 44%; top: 6%; width: 10px; height: 14px; } .hero-deco .p3 { left: 54%; top: 62%; }
+.hero-deco .p4 { right: 5%; top: 78%; width: 11px; height: 16px; } .hero-deco .p5 { left: 12%; bottom: 10%; } .hero-deco .p6 { right: 30%; top: 10%; width: 9px; height: 13px; }
+.hero-mini { position: absolute; right: -.9rem; bottom: 1.3rem; width: 33%; aspect-ratio: 1; border-radius: 50%; overflow: hidden; background: var(--rosa-foto); border: 5px solid var(--h-circ); box-shadow: 0 16px 30px -16px rgba(0, 0, 0, .55); }
+.hero-mini img { width: 100%; height: 100%; object-fit: cover; object-position: center 42%; transform: scale(1.15); }
+.hero-chip { right: auto; left: 2.4rem; top: -.6rem; }
+@media (min-width: 900px) {
+  .hero-grilla { min-height: 36rem; }
+  .hero-arte { width: min(100%, 28rem); }
+  .hero-rama.r1 { width: 10rem; right: 2%; top: 30%; }
+  .hero-rama.r2 { width: 12rem; left: 0; }
+  .hero-mini { right: -1.6rem; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero.activa .petalo { animation: flotar 9s ease-in-out infinite alternate; }
+  .hero.activa .p2 { animation-duration: 12s; } .hero.activa .p3 { animation-duration: 10s; animation-delay: -4s; } .hero.activa .p4 { animation-duration: 13s; animation-delay: -2s; } .hero.activa .p5 { animation-duration: 11s; animation-delay: -6s; } .hero.activa .p6 { animation-duration: 8s; animation-delay: -3s; }
+  .hero.activa .hero-mini { animation: mecer 7s 1s ease-in-out infinite alternate; }
+}

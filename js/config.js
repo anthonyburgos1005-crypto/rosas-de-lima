@@ -52,14 +52,14 @@ window.CONFIG = {
 
   // Carrusel "Los más buscados": códigos de los 6 arreglos, en el orden en que salen.
   // Los eligió el desarrollador (3 de cumpleaños y 3 de velorios): que el dueño confirme cuáles son.
-  masBuscados: ['CUM-01', 'VEL-01', 'CUM-02', 'VEL-02', 'CUM-03', 'VEL-04'],
+  masBuscados: ['CUM-01', 'VEL-01', 'ANI-01', 'MAT-01', 'GRA-02', 'VEL-26'],
 
   // OFERTA DEL DÍA: un arreglo distinto cada día, con reloj hasta la medianoche.
   // OJO: el texto promete un "precio especial". Es un EJEMPLO: antes de publicar,
   // el dueño debe confirmar que dará esa oferta y qué arreglos entran.
   // Para ocultar toda la sección: activa: false.
   ofertaDelDia: {
-    activa: true,
+    activa: false,
     etiqueta: 'Solo por hoy',
     titulo: 'Oferta del día',
     texto: 'Precio especial hasta la medianoche. Pídalo con su código y se lo confirmamos por WhatsApp.',

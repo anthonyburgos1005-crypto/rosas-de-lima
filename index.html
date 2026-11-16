@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Florería Rosas de Lima | Arreglos florales con delivery en Comas y Lima Norte</title>
-  <meta name="description" content="Florería en Comas con delivery en Lima. Arreglos de cumpleaños, coronas y corazones para velorios con atención las 24 horas, aniversarios, quinceañeras, matrimonios y decoración de andas. Pida por WhatsApp con el código de su arreglo.">
+  <meta name="description" content="Florería en Comas con delivery en Lima. Arreglos de cumpleaños, coronas, corazones, cruces y trípodes para velorios con atención las 24 horas, aniversarios, graduación, matrimonios, quinceañeras y decoración de andas. Pida por WhatsApp con el código de su arreglo.">
   <link rel="canonical" href="https://floreriarosasdelima.com/">
   <meta name="theme-color" content="#fdf6ed">
 
@@ -94,9 +94,9 @@
       <a href="#cumpleanos">Cumpleaños</a>
       <a href="#velorios">Velorios</a>
       <a href="#aniversarios">Aniversarios</a>
-      <a href="#eventos">Eventos</a>
+      <a href="#matrimonios">Matrimonios</a>
+      <a href="#graduacion">Graduación</a>
       <a href="#arma-tu-ramo">Arme su ramo</a>
-      <a href="#delivery">Delivery</a>
       <a href="#contacto">Contacto</a>
     </nav>
 
@@ -148,53 +148,135 @@
     </div>
   </section>
 
-  <!-- ============ PORTADA ============ -->
-  <section class="portada" id="inicio">
-    <!-- Fondo decorativo: formas, rama y pétalos que flotan -->
-    <div class="portada-fondo" aria-hidden="true">
-      <span class="forma forma-anillo"></span>
-      <span class="forma forma-disco"></span>
-      <span class="forma forma-arco"></span>
-      <svg class="rama" viewBox="0 0 200 320" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
-        <path d="M100 318C96 240 108 150 100 20"/>
-        <path d="M100 250c-28-6-48-26-52-56 30 2 50 22 52 56zM101 250c28-8 46-30 48-60-30 4-48 26-48 60z"/>
-        <path d="M102 180c-24-8-40-28-42-54 26 4 42 24 42 54zM103 180c24-10 38-30 38-56-26 6-40 28-38 56z"/>
-        <path d="M102 112c-18-8-30-24-30-46 20 6 32 22 30 46zM103 112c18-10 28-26 26-48-20 8-30 24-26 48z"/>
-        <path d="M100 52c-10-10-12-22-6-34 10 8 12 20 6 34z"/>
-      </svg>
-      <span class="petalo p1"></span><span class="petalo p2"></span><span class="petalo p3"></span><span class="petalo p4"></span><span class="petalo p5"></span><span class="petalo p6"></span>
+  <!-- ============ PORTADA: banners deslizables (cambian solos cada 7 segundos) ============ -->
+  <section class="heroes" id="inicio" aria-roledescription="carrusel" aria-label="Destacados de la florería">
+    <h1 class="oculto">Florería Rosas de Lima: flores para celebrar y para acompañar, con delivery en Lima</h1>
+    <div class="heroes-pista" id="heroes" tabindex="0">
+
+      <article class="hero hero-rosa activa">
+        <div class="contenedor hero-grilla">
+          <div class="hero-texto">
+            <p class="sobretitulo">Cumpleaños</p>
+            <h2 class="hero-titulo">Regale <em>emociones</em> en su día</h2>
+            <span class="hero-orn" aria-hidden="true"><i></i></span>
+            <p class="hero-frase">Ramos en papel coreano, boxes y girasoles con dedicatoria, listos para sorprender.</p>
+          <ul class="hero-lista">
+            <li><span class="hero-ic"><svg aria-hidden="true"><use href="#i-moto"/></svg></span>Delivery a domicilio en Lima</li>
+            <li><span class="hero-ic"><svg aria-hidden="true"><use href="#i-lapiz"/></svg></span>Dedicatoria en tarjeta</li>
+          </ul>
+            <div class="hero-botones">
+              <a class="boton boton-primario" href="#cumpleanos">Ver arreglos de cumpleaños</a>
+              <a class="boton boton-wa" data-wa="general" href="https://wa.me/51922175593" target="_blank" rel="noopener"><svg class="icono" aria-hidden="true"><use href="#i-wa"/></svg>Pedir por WhatsApp</a>
+            </div>
+          </div>
+        <div class="hero-arte">
+          <div class="hero-arco"><img src="img/fotos/cum-01.jpg" alt="Ramo redondo de rosas rosadas con un lirio blanco al centro" width="900" height="1125" fetchpriority="high"></div>
+          <div class="hero-circulo"><img src="img/fotos/cum-28.jpg" alt="Ramo de girasoles con gypsophila" width="900" height="1125" loading="lazy"></div>
+          <span class="hero-chip"><svg class="icono" aria-hidden="true"><use href="#i-flor"/></svg>Cumpleaños</span>
+        </div>
+        </div>
+      </article>
+
+      <article class="hero hero-oscuro">
+        <div class="contenedor hero-grilla">
+          <div class="hero-texto">
+            <p class="sobretitulo">Arreglos fúnebres</p>
+            <h2 class="hero-titulo">Florales para <em>sepelios</em></h2>
+            <span class="hero-orn" aria-hidden="true"><i></i></span>
+            <p class="hero-frase">Coronas, corazones y arreglos personalizados para acompañar a su familia con respeto.</p>
+          <ul class="hero-lista">
+            <li><span class="hero-ic"><svg aria-hidden="true"><use href="#i-flor"/></svg></span>Coronas, corazones y trípodes</li>
+            <li><span class="hero-ic"><svg aria-hidden="true"><use href="#i-reloj"/></svg></span>Atención inmediata las 24 horas</li>
+            <li><span class="hero-ic"><svg aria-hidden="true"><use href="#i-moto"/></svg></span>Entrega en el velatorio</li>
+          </ul>
+            <div class="hero-botones">
+              <a class="boton boton-acento" href="#velorios">Ver arreglos para velorios</a>
+              <a class="boton boton-linea-clara" data-wa="velorio" href="https://wa.me/51922175593" target="_blank" rel="noopener"><svg class="icono" aria-hidden="true"><use href="#i-wa"/></svg>Pedido urgente</a>
+            </div>
+          </div>
+        <div class="hero-arte">
+          <div class="hero-arco"><img src="img/fotos/vel-20.jpg" alt="Corona de corazón blanca con lirios y gerberas" width="900" height="1125" loading="lazy"></div>
+          <div class="hero-circulo"><img src="img/fotos/vel-26.jpg" alt="Trípode de lirios, rosas y hortensias blancas" width="900" height="1125" loading="lazy"></div>
+          <span class="hero-chip"><svg class="icono" aria-hidden="true"><use href="#i-flor"/></svg>24 horas</span>
+        </div>
+        </div>
+      </article>
+
+      <article class="hero hero-crema">
+        <div class="contenedor hero-grilla">
+          <div class="hero-texto">
+            <p class="sobretitulo">Matrimonios</p>
+            <h2 class="hero-titulo">El día más <em>especial</em></h2>
+            <span class="hero-orn" aria-hidden="true"><i></i></span>
+            <p class="hero-frase">Bouquets de novia, caminos y centros de mesa, arcos y decoración del auto de los novios.</p>
+          <ul class="hero-lista">
+            <li><span class="hero-ic"><svg aria-hidden="true"><use href="#i-flor"/></svg></span>Bouquets, caminos de mesa y arcos</li>
+            <li><span class="hero-ic"><svg aria-hidden="true"><use href="#i-lapiz"/></svg></span>Propuesta a su medida</li>
+          </ul>
+            <div class="hero-botones">
+              <a class="boton boton-primario" href="#matrimonios">Ver matrimonios</a>
+              <a class="boton boton-wa" data-wa="general" href="https://wa.me/51922175593" target="_blank" rel="noopener"><svg class="icono" aria-hidden="true"><use href="#i-wa"/></svg>Cotizar por WhatsApp</a>
+            </div>
+          </div>
+        <div class="hero-arte">
+          <div class="hero-arco"><img src="img/fotos/mat-01.jpg" alt="Bouquet de novia en tonos pastel" width="900" height="1125" loading="lazy"></div>
+          <div class="hero-circulo"><img src="img/fotos/ani-01.jpg" alt="Ramo redondo de rosas rojas" width="900" height="1125" loading="lazy"></div>
+          <span class="hero-chip"><svg class="icono" aria-hidden="true"><use href="#i-flor"/></svg>Para novios</span>
+        </div>
+        </div>
+      </article>
+
+      <article class="hero hero-granate">
+        <div class="contenedor hero-grilla">
+          <div class="hero-texto">
+            <p class="sobretitulo">Graduación</p>
+            <h2 class="hero-titulo">Celebre sus <em>logros</em></h2>
+            <span class="hero-orn" aria-hidden="true"><i></i></span>
+            <p class="hero-frase">Ramos y boxes con osito graduado, globos y chocolates para felicitar a quien más quiere.</p>
+          <ul class="hero-lista">
+            <li><span class="hero-ic"><svg aria-hidden="true"><use href="#i-flor"/></svg></span>Ositos, globos y chocolates</li>
+            <li><span class="hero-ic"><svg aria-hidden="true"><use href="#i-lapiz"/></svg></span>Dedicatoria personalizada</li>
+          </ul>
+            <div class="hero-botones">
+              <a class="boton boton-claro" href="#graduacion">Ver regalos de graduación</a>
+              <a class="boton boton-linea-clara" data-wa="general" href="https://wa.me/51922175593" target="_blank" rel="noopener"><svg class="icono" aria-hidden="true"><use href="#i-wa"/></svg>Pedir por WhatsApp</a>
+            </div>
+          </div>
+        <div class="hero-arte">
+          <div class="hero-arco"><img src="img/fotos/gra-02.jpg" alt="Box con girasoles, osito graduado y chocolates" width="900" height="1125" loading="lazy"></div>
+          <div class="hero-circulo"><img src="img/fotos/gra-03.jpg" alt="Ramo rosado con osito graduado y globo de corazón" width="900" height="1125" loading="lazy"></div>
+          <span class="hero-chip"><svg class="icono" aria-hidden="true"><use href="#i-flor"/></svg>Graduación</span>
+        </div>
+        </div>
+      </article>
+
+      <article class="hero hero-verde">
+        <div class="contenedor hero-grilla">
+          <div class="hero-texto">
+            <p class="sobretitulo">Aniversarios y empresas</p>
+            <h2 class="hero-titulo">Flores para su <em>empresa</em></h2>
+            <span class="hero-orn" aria-hidden="true"><i></i></span>
+            <p class="hero-frase">Trípodes y arreglos de girasoles, aves del paraíso y lirios para aniversarios empresariales.</p>
+          <ul class="hero-lista">
+            <li><span class="hero-ic"><svg aria-hidden="true"><use href="#i-flor"/></svg></span>Arreglos empresariales</li>
+            <li><span class="hero-ic"><svg aria-hidden="true"><use href="#i-moto"/></svg></span>Entrega con tarjeta de la empresa</li>
+          </ul>
+            <div class="hero-botones">
+              <a class="boton boton-acento" href="#aniversarios">Ver aniversarios</a>
+              <a class="boton boton-linea-clara" data-wa="general" href="https://wa.me/51922175593" target="_blank" rel="noopener"><svg class="icono" aria-hidden="true"><use href="#i-wa"/></svg>Cotizar por WhatsApp</a>
+            </div>
+          </div>
+        <div class="hero-arte">
+          <div class="hero-arco"><img src="img/fotos/ani-06.jpg" alt="Arreglo de girasoles, ave del paraíso y lirios blancos" width="900" height="1125" loading="lazy"></div>
+          <div class="hero-circulo"><img src="img/fotos/ani-08.jpg" alt="Arreglo tropical de girasoles y lirios amarillos" width="900" height="1125" loading="lazy"></div>
+          <span class="hero-chip"><svg class="icono" aria-hidden="true"><use href="#i-flor"/></svg>Empresas</span>
+        </div>
+        </div>
+      </article>
     </div>
-    <div class="contenedor portada-grilla">
-      <div class="portada-texto">
-        <p class="sobretitulo">Florería en Comas · Delivery en Lima</p>
-        <h1>Flores para <em>celebrar</em> y para <em>acompañar</em></h1>
-        <p class="portada-bajada">Arreglos de cumpleaños, coronas y corazones para velorios, y flores para todo tipo de eventos. Elija su arreglo y pídalo por WhatsApp con su código.</p>
-        <div class="portada-botones">
-          <a class="boton boton-primario" href="#cumpleanos">Arreglos de cumpleaños</a>
-          <a class="boton boton-oscuro" href="#velorios">Arreglos para velorios</a>
-        </div>
-        <p class="portada-nota">
-          <svg class="icono" aria-hidden="true"><use href="#i-reloj"/></svg>
-          Atención inmediata las 24 horas por WhatsApp
-        </p>
-      </div>
-      <!-- Las fotos de la portada rotan solas; la lista está en js/config.js (portada) -->
-      <div class="portada-arte">
-        <div class="portada-arco" id="portadaArco">
-          <img class="activa" src="img/fotos/cum-01.jpg" alt="Ramo redondo de rosas rosadas con un lirio blanco al centro" width="900" height="1125" fetchpriority="high">
-        </div>
-        <div class="portada-circulo" id="portadaCirculo">
-          <img class="activa" src="img/fotos/vel-01.jpg" alt="Corazón blanco con gerberas fucsia para velorio" width="900" height="1125">
-        </div>
-        <div class="portada-sello" aria-hidden="true">
-          <svg viewBox="0 0 120 120">
-            <defs><path id="selloRuta" d="M60 60m-46 0a46 46 0 1 1 92 0a46 46 0 1 1-92 0"/></defs>
-            <text><textPath href="#selloRuta" textLength="284">ATENCIÓN 24 HORAS · DELIVERY EN LIMA · </textPath></text>
-          </svg>
-          <svg class="sello-flor"><use href="#i-flor"/></svg>
-        </div>
-      </div>
-    </div>
+    <button class="heroes-flecha antes" id="heroesAntes" type="button" aria-label="Banner anterior"><svg class="icono girado" aria-hidden="true"><use href="#i-flecha"/></svg></button>
+    <button class="heroes-flecha despues" id="heroesDespues" type="button" aria-label="Banner siguiente"><svg class="icono" aria-hidden="true"><use href="#i-flecha"/></svg></button>
+    <div class="heroes-puntos" id="heroesPuntos"></div>
   </section>
 
   <!-- ============ BENEFICIOS ============ -->
@@ -303,12 +385,12 @@
       <header class="titulo-seccion revelar">
         <p class="sobretitulo">Arreglos fúnebres</p>
         <h2>Arreglos para <em>velorios</em></h2>
-        <p>Coronas de corazón, corazones abiertos, lágrimas florales y trípodes para acompañar en la despedida. Atención inmediata las 24 horas y entrega en el velatorio.</p>
+        <p>Coronas corazón, trípodes especiales, coronas picarón, cruces de pompones, lágrimas, mantos para cajón y coronas personalizadas. Atención inmediata las 24 horas y entrega en el velatorio.</p>
         <a class="boton boton-acento" data-wa="velorio" href="https://wa.me/51922175593" target="_blank" rel="noopener">
           <svg class="icono" aria-hidden="true"><use href="#i-wa"/></svg>Pedido urgente por WhatsApp
         </a>
       </header>
-      <div class="catalogo" data-evento="Velorios" data-pagina="8"></div>
+      <div class="catalogo" data-evento="Velorios" data-pagina="12"></div>
     </div>
   </section>
 
@@ -318,9 +400,34 @@
       <header class="titulo-seccion revelar">
         <p class="sobretitulo">Para celebrar juntos</p>
         <h2>Para su <em>aniversario</em></h2>
-        <p>Ramos de rosas rojas para decir lo que siente.</p>
+        <p>Ramos de rosas rojas para decir lo que siente y arreglos empresariales para celebrar con su equipo.</p>
       </header>
       <div class="catalogo" data-evento="Aniversarios" data-pagina="8"></div>
+    </div>
+  </section>
+
+  <!-- ============ MATRIMONIOS ============ -->
+  <section class="seccion fondo-blanco con-formas" id="matrimonios">
+    <div class="contenedor">
+      <header class="titulo-seccion revelar">
+        <p class="sobretitulo">Para el día más especial</p>
+        <h2>Flores para su <em>matrimonio</em></h2>
+        <p>Bouquets de novia, caminos y centros de mesa, arcos y decoración del auto. Cuéntenos su idea y le preparamos una propuesta a su medida.</p>
+        <button class="boton boton-primario" type="button" data-cotizar="Matrimonio">Cotizar mi matrimonio</button>
+      </header>
+      <div class="catalogo" data-evento="Matrimonios" data-pagina="8"></div>
+    </div>
+  </section>
+
+  <!-- ============ GRADUACIÓN ============ -->
+  <section class="seccion" id="graduacion">
+    <div class="contenedor">
+      <header class="titulo-seccion revelar">
+        <p class="sobretitulo">Para felicitar</p>
+        <h2>Regalos de <em>graduación</em></h2>
+        <p>Ramos y boxes con osito graduado, globos y chocolates. Agregue una dedicatoria y lo llevamos a domicilio.</p>
+      </header>
+      <div class="catalogo" data-evento="Graduación" data-pagina="8"></div>
     </div>
   </section>
 
@@ -355,8 +462,7 @@
           <span class="evento-texto"><span class="evento-nombre">Quinceañeras</span><span class="evento-ver">Cotizar<svg class="icono" aria-hidden="true"><use href="#i-flecha"/></svg></span></span>
         </button>
         <button class="evento revelar" type="button" data-cotizar="Matrimonio">
-          <img src="img/fotos/ref-matrimonios.jpg" alt="" loading="lazy" width="900" height="1125">
-          <span class="etiqueta-ref">Foto referencial</span>
+          <img src="img/fotos/mat-08.jpg" alt="" loading="lazy" width="900" height="1125">
           <span class="evento-texto"><span class="evento-nombre">Matrimonios</span><span class="evento-ver">Cotizar<svg class="icono" aria-hidden="true"><use href="#i-flecha"/></svg></span></span>
         </button>
         <button class="evento revelar" type="button" data-cotizar="Decoración de anda">
@@ -543,7 +649,9 @@
       <a href="#cumpleanos">Cumpleaños</a>
       <a href="#velorios">Velorios</a>
       <a href="#aniversarios">Aniversarios</a>
-      <a href="#eventos">Quinceañeras, matrimonios y andas</a>
+      <a href="#matrimonios">Matrimonios</a>
+      <a href="#graduacion">Graduación</a>
+      <a href="#eventos">Quinceañeras y andas</a>
       <a href="#arma-tu-ramo">Arme su ramo</a>
     </nav>
     <nav aria-label="Ayuda">

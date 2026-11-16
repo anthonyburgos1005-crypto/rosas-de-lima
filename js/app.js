@@ -114,33 +114,19 @@
     }, 4500);
   };
 
-  /* ---------- Portada: fotos que rotan en el arco y en el círculo ---------- */
+  /* ---------- Portada: banners deslizables ---------- */
   const sinMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const iniciarPortada = () => {
-    const P = C.portada || {};
-    const montar = (selector, fotos, retraso) => {
-      const caja = $(selector);
-      if (!caja || !fotos || fotos.length < 2) return;
-      const arrancar = () => {
-        // Las demás fotos se agregan después de cargar la página, para no frenar el inicio.
-        fotos.slice(1).forEach((src) => {
-          const img = new Image();
-          img.alt = ''; img.decoding = 'async'; img.src = src;
-          caja.appendChild(img);
-        });
-        if (sinMovimiento) return;
-        let actual = 0;
-        setTimeout(() => setInterval(() => {
-          const imgs = $$('img', caja);
-          imgs[actual].classList.remove('activa');
-          actual = (actual + 1) % imgs.length;
-          imgs[actual].classList.add('activa');
-        }, 4800), retraso);
-      };
-      if (document.readyState === 'complete') arrancar(); else window.addEventListener('load', arrancar);
-    };
-    montar('#portadaArco', P.arco, 0);
-    montar('#portadaCirculo', P.circulo, 2400); // desfasado, para que no cambien a la vez
+  // Cada banner es un <article class="hero"> de index.html. El que se ve lleva la clase "activa" (anima su texto).
+  const iniciarHeroes = () => {
+    const caja = $('#heroes');
+    if (!caja) return;
+    const slides = $$('.hero', caja);
+    montarCarrusel(caja, $('#heroesPuntos'), $('#heroesAntes'), $('#heroesDespues'), 7000);
+    if (!('IntersectionObserver' in window)) { slides.forEach((s) => s.classList.add('activa')); return; }
+    const ver = new IntersectionObserver((entradas) => {
+      entradas.forEach((en) => en.target.classList.toggle('activa', en.isIntersecting));
+    }, { root: caja, threshold: 0.55 });
+    slides.forEach((s) => ver.observe(s));
   };
 
   /* ---------- Carrusel deslizable (sirve para "Los más buscados" y para Promociones) ---------- */
@@ -150,7 +136,7 @@
     const primera = caja.firstElementChild;
     if (!primera) return;
     // Cuánto avanza cada paso: el ancho de una tarjeta más el espacio entre tarjetas.
-    const paso = () => primera.getBoundingClientRect().width + (parseFloat(getComputedStyle(caja).columnGap) || 16);
+    const paso = () => primera.getBoundingClientRect().width + (Number.isNaN(parseFloat(getComputedStyle(caja).columnGap)) ? 16 : parseFloat(getComputedStyle(caja).columnGap));
     const maximo = () => Math.max(0, caja.scrollWidth - caja.clientWidth);
     const posiciones = () => Math.max(1, Math.round(maximo() / paso()) + 1);
     const indice = () => Math.min(posiciones() - 1, Math.round(caja.scrollLeft / paso()));
@@ -781,7 +767,7 @@
   const iniciar = async () => {
     prepararLinksWhatsApp();
     iniciarAnuncio();
-    iniciarPortada();
+    iniciarHeroes();
     pintarPromos();
     iniciarCabecera();
     iniciarClicsDeTarjetas();

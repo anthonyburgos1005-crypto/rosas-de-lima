@@ -46,12 +46,9 @@ window.CONFIG = {
     'Pedidos por WhatsApp: 922 175 593'
   ],
 
-  // Fotos que rotan en la portada. La PRIMERA de cada lista debe ser la misma
-  // que está escrita en index.html (portadaArco y portadaCirculo).
-  portada: {
-    arco: ['img/fotos/cum-01.jpg', 'img/fotos/cum-02.jpg', 'img/fotos/cum-03.jpg', 'img/fotos/cum-04.jpg'],
-    circulo: ['img/fotos/vel-01.jpg', 'img/fotos/vel-02.jpg', 'img/fotos/vel-04.jpg']
-  },
+  // Los banners de la portada (cumpleaños, sepelios, matrimonios, graduación y empresas)
+  // están escritos en index.html, dentro de <section class="heroes">: cada <article class="hero">
+  // es un banner con su frase, sus fotos y sus botones. Cambian solos cada 7 segundos.
 
   // Carrusel "Los más buscados": códigos de los 6 arreglos, en el orden en que salen.
   // Los eligió el desarrollador (3 de cumpleaños y 3 de velorios): que el dueño confirme cuáles son.
@@ -97,6 +94,16 @@ window.CONFIG = {
       tema: 'crema', etiqueta: 'Aniversarios', titulo: 'Rosas rojas para decirlo todo',
       texto: 'Ramos redondos de rosas con lluvia y lirio.',
       boton: 'Ver ramos', enlace: '#aniversarios', foto: 'img/fotos/ani-01.jpg'
+    },
+    {
+      tema: 'crema', etiqueta: 'Matrimonios', titulo: 'Su día, a su estilo',
+      texto: 'Bouquets de novia, caminos de mesa, arcos y decoración del auto.',
+      boton: 'Ver matrimonios', enlace: '#matrimonios', foto: 'img/fotos/mat-01.jpg'
+    },
+    {
+      tema: 'rosa', etiqueta: 'Graduación', titulo: 'Felicite con un detalle único',
+      texto: 'Ramos y boxes con osito graduado, globos y chocolates.',
+      boton: 'Ver graduación', enlace: '#graduacion', foto: 'img/fotos/gra-02.jpg'
     },
     {
       tema: 'oscuro', etiqueta: 'Pedido urgente', titulo: '¿Lo necesita hoy?',

@@ -82,6 +82,8 @@
   try { estado.favoritos = new Set(JSON.parse(localStorage.getItem('rdl-favoritos') || '[]')); } catch (e) { /* sin almacenamiento: no pasa nada */ }
   const guardarFavoritos = () => { try { localStorage.setItem('rdl-favoritos', JSON.stringify([...estado.favoritos])); } catch (e) { /* idem */ } };
 
+  // Apartados de un arreglo: su "tipo" y, si tiene, los de "tambien" (aparece repetido en cada uno).
+  const tiposDe = (p) => [p.tipo, ...(Array.isArray(p.tambien) ? p.tambien : [])].filter(Boolean);
   const disponibles = () => estado.productos.filter((p) => esSi(p.disponible));
   // Orden general: destacados primero, luego por el campo "orden".
   const porOrden = (a, b) => (esSi(b.destacado) - esSi(a.destacado)) || ((Number(a.orden) || 0) - (Number(b.orden) || 0));
@@ -260,8 +262,8 @@
     const tarjetas = estado.catalogos.map((cat) => {
       const prods = disponibles().filter((p) => p.evento === cat.evento).sort(porOrden);
       if (!prods.length) return null;
-      const tipos = [...new Set(prods.map((p) => p.tipo).filter(Boolean))].map((t) => {
-        const de = prods.filter((p) => p.tipo === t);
+      const tipos = [...new Set(prods.flatMap(tiposDe))].map((t) => {
+        const de = prods.filter((p) => tiposDe(p).includes(t));
         return { t, n: de.length, foto: de[0].foto };
       });
       const i = info[cat.evento] || {};
@@ -431,11 +433,11 @@
     const verMas = $('[data-vermas]', cat.el);
 
     // Filtros por tipo: solo si el evento tiene más de un tipo.
-    const tipos = [...new Set(todos.map((p) => p.tipo).filter(Boolean))];
+    const tipos = [...new Set(todos.flatMap(tiposDe))];
     cajaTipos.hidden = tipos.length < 2;
     if (tipos.length >= 2) {
       cajaTipos.innerHTML = ['Todos', ...tipos].map((t) => {
-        const deTipo = t === 'Todos' ? todos : todos.filter((p) => p.tipo === t);
+        const deTipo = t === 'Todos' ? todos : todos.filter((p) => tiposDe(p).includes(t));
         const foto = t === 'Todos'
           ? '<svg aria-hidden="true"><use href="#i-flor"/></svg>'
           : `<img src="${escapar(deTipo[0].foto)}" alt="" loading="lazy" width="120" height="150">`;
@@ -443,7 +445,7 @@
       }).join('');
     }
 
-    const lista = cat.tipo === 'Todos' ? todos : todos.filter((p) => p.tipo === cat.tipo);
+    const lista = cat.tipo === 'Todos' ? todos : todos.filter((p) => tiposDe(p).includes(cat.tipo));
     if (!estado.productos.length) {
       grilla.innerHTML = '<p class="catalogo-vacio">No pudimos cargar los arreglos en este momento. Escríbanos por WhatsApp y le enviamos los modelos.</p>';
     } else if (!lista.length) {
